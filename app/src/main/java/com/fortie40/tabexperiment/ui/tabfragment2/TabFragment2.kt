@@ -17,6 +17,7 @@ class TabFragment2 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        setHasOptionsMenu(true)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_tab2, container, false)
     }

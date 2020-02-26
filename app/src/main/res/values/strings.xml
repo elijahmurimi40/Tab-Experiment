@@ -15,4 +15,7 @@
 
     <!-- Camera Fragment -->
     <string name="hello_camera_fragment">Hello camera fragment</string>
+
+    // menu item
+    <string name="settings">Settings</string>
 </resources>
