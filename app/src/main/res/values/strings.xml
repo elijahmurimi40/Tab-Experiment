@@ -3,10 +3,13 @@
 
     <!-- Tab Fragment1 -->
     <string name="hello_chats_fragment">Hello chats fragment</string>
+    <string name="tab_label1">Chats</string>
 
     <!-- Tab Fragment2 -->
     <string name="hello_status_fragment">Hello status fragment</string>
+    <string name="tab_label2">Status</string>
 
     <!-- Tab Fragment2 -->
     <string name="hello_calls_fragment">Hello calls fragment</string>
+    <string name="tab_label3">Calls</string>
 </resources>

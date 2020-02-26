@@ -10,7 +10,7 @@ import com.fortie40.tabexperiment.ui.tabfragment3.TabFragment3
 class PagerAdapter(fm: FragmentManager, numOfTabs: Int) :
     FragmentStatePagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
-    var mNumOfTabs = numOfTabs
+    private var mNumOfTabs = numOfTabs
 
     override fun getItem(position: Int): Fragment {
         return when(position) {
