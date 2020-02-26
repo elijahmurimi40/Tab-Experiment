@@ -16,6 +16,9 @@
     <!-- Camera Fragment -->
     <string name="hello_camera_fragment">Hello camera fragment</string>
 
-    // menu item
+    // tab fragment1 and 2 menu item
     <string name="settings">Settings</string>
+
+    // tab fragment3 menu item
+    <string name="delete">Delete</string>
 </resources>
