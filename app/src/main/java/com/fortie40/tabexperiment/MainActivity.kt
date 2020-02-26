@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         // set text for each tab
+        tab_layout.addTab(tab_layout.newTab().setText("Camera"))
         tab_layout.addTab(tab_layout.newTab().setText(R.string.tab_label1))
         tab_layout.addTab(tab_layout.newTab().setText(R.string.tab_label2))
         tab_layout.addTab(tab_layout.newTab().setText(R.string.tab_label3))
