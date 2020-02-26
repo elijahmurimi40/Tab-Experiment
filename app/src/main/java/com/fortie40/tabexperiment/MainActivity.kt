@@ -2,6 +2,7 @@ package com.fortie40.tabexperiment
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.LinearLayout
 import com.fortie40.tabexperiment.pageradapters.PagerAdapter
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,13 +19,14 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         // set text for each tab
-        tab_layout.addTab(tab_layout.newTab().setText("Camera"))
+        tab_layout.addTab(tab_layout.newTab().setIcon(getDrawable(R.drawable.ic_delete_24dp)))
         tab_layout.addTab(tab_layout.newTab().setText(R.string.tab_label1))
         tab_layout.addTab(tab_layout.newTab().setText(R.string.tab_label2))
         tab_layout.addTab(tab_layout.newTab().setText(R.string.tab_label3))
 
         // tabs to fill entire layout
         tab_layout.tabGravity = TabLayout.GRAVITY_FILL
+        setTabWidthAsWrapContent(0)
 
         // PagerAdapter to manage page views in fragments
         val pagerAdapter = PagerAdapter(supportFragmentManager, tab_layout.tabCount)
@@ -50,5 +52,13 @@ class MainActivity : AppCompatActivity() {
         } else {
             super.onBackPressed()
         }
+    }
+
+    fun setTabWidthAsWrapContent(tabPosition: Int) {
+        val layout = (tab_layout.getChildAt(0) as LinearLayout).getChildAt(tabPosition) as LinearLayout
+        val layoutParams = layout.layoutParams as LinearLayout.LayoutParams
+        layoutParams.weight = 0f
+        layoutParams.width = LinearLayout.LayoutParams.WRAP_CONTENT
+        layout.layoutParams = layoutParams
     }
 }
