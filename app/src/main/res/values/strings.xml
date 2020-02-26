@@ -12,4 +12,7 @@
     <!-- Tab Fragment2 -->
     <string name="hello_calls_fragment">Hello calls fragment</string>
     <string name="tab_label3">Calls</string>
+
+    <!-- Camera Fragment -->
+    <string name="hello_camera_fragment">Hello camera fragment</string>
 </resources>
