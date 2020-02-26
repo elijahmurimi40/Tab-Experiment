@@ -43,4 +43,12 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+
+    override fun onBackPressed() {
+        if (pager.currentItem != DEFAULT_PAGE) {
+            pager.currentItem = DEFAULT_PAGE
+        } else {
+            super.onBackPressed()
+        }
+    }
 }
