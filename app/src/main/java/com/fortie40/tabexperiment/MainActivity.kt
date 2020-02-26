@@ -8,6 +8,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        const val DEFAULT_PAGE = 1
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         // PagerAdapter to manage page views in fragments
         val pagerAdapter = PagerAdapter(supportFragmentManager, tab_layout.tabCount)
         pager.adapter = pagerAdapter
+        pager.currentItem = DEFAULT_PAGE
 
         // Setting a listener for clicks
         pager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tab_layout))
