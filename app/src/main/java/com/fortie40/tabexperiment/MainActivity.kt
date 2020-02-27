@@ -1,8 +1,11 @@
 package com.fortie40.tabexperiment
 
+import android.graphics.Color
+import android.graphics.PorterDuff
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
+import androidx.core.content.ContextCompat
 import com.fortie40.tabexperiment.pageradapters.PagerAdapter
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
@@ -28,6 +31,10 @@ class MainActivity : AppCompatActivity() {
         tab_layout.tabGravity = TabLayout.GRAVITY_FILL
         setTabWidthAsWrapContent()
 
+        // set Icon color
+        tab_layout.getTabAt(0)!!.icon?.setColorFilter(
+            ContextCompat.getColor(this, R.color.colorIcon), PorterDuff.Mode.SRC_IN)
+
         // PagerAdapter to manage page views in fragments
         val pagerAdapter = PagerAdapter(supportFragmentManager, tab_layout.tabCount)
         pager.adapter = pagerAdapter
@@ -37,10 +44,14 @@ class MainActivity : AppCompatActivity() {
         tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
 
-            override fun onTabUnselected(tab: TabLayout.Tab?) {}
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                tab!!.icon?.setColorFilter(ContextCompat.getColor(
+                    this@MainActivity, R.color.colorIcon), PorterDuff.Mode.SRC_IN)
+            }
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 pager.currentItem = tab!!.position
+                tab.icon?.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN)
             }
         })
 
