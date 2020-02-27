@@ -19,19 +19,18 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         // set text for each tab
-        tab_layout.addTab(tab_layout.newTab().setIcon(getDrawable(R.drawable.ic_delete_24dp)))
+        tab_layout.addTab(tab_layout.newTab().setIcon(getDrawable(R.drawable.ic_camera_24dp)))
         tab_layout.addTab(tab_layout.newTab().setText(R.string.tab_label1))
         tab_layout.addTab(tab_layout.newTab().setText(R.string.tab_label2))
         tab_layout.addTab(tab_layout.newTab().setText(R.string.tab_label3))
 
         // tabs to fill entire layout
         tab_layout.tabGravity = TabLayout.GRAVITY_FILL
-        setTabWidthAsWrapContent(0)
+        setTabWidthAsWrapContent()
 
         // PagerAdapter to manage page views in fragments
         val pagerAdapter = PagerAdapter(supportFragmentManager, tab_layout.tabCount)
         pager.adapter = pagerAdapter
-        pager.currentItem = DEFAULT_PAGE
 
         // Setting a listener for clicks
         pager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tab_layout))
@@ -44,6 +43,9 @@ class MainActivity : AppCompatActivity() {
                 pager.currentItem = tab!!.position
             }
         })
+
+        // set default page on startup
+        pager.currentItem = DEFAULT_PAGE
     }
 
     override fun onBackPressed() {
@@ -54,8 +56,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun setTabWidthAsWrapContent(tabPosition: Int) {
-        val layout = (tab_layout.getChildAt(0) as LinearLayout).getChildAt(tabPosition) as LinearLayout
+    private fun setTabWidthAsWrapContent() {
+        val layout = (tab_layout.getChildAt(0) as LinearLayout).getChildAt(0) as LinearLayout
         val layoutParams = layout.layoutParams as LinearLayout.LayoutParams
         layoutParams.weight = 0f
         layoutParams.width = LinearLayout.LayoutParams.WRAP_CONTENT
