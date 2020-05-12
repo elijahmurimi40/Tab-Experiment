@@ -5,6 +5,8 @@
 # Tab-Experiment
 Use tab navigation with swipe views -kotlin
 
+Minimum Android Version 5.0 (Lollipop)
+
 ## License
 
 MIT License
