@@ -7,6 +7,9 @@ Use tab navigation with swipe views -kotlin
 
 Minimum Android Version 5.0 (Lollipop)
 
+### No Constraints
+<img src="demo/TabExperiment.gif" alt="Demo" height="500px" />
+
 ## License
 
 MIT License
